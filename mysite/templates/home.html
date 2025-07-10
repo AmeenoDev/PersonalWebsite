@@ -6,7 +6,12 @@
     <title>home</title>
 </head>
 <body>
-    <h3>Welcome to my personal website!</h3>
-    <p>This is a simple Django application.</p>
+    name = {{ name |default:"Guest" }}
+    <br>
+    age = {{ age }}
+    <br>
+    hobby = {{ hobby }}
+    <br>
+    location = {{ location }}
 </body>
 </html>
