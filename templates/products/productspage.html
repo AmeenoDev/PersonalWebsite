@@ -1,0 +1,14 @@
+{% extends 'cons/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% for i in products %}
+    <img src="{{ i.image.url }}" alt="" >
+    <h1>{{ i.name }}</h1>
+    <h2>{{ i.description }}</h2>
+    <p>Price: {{ i.price }}</p>
+    <p>Category: {{ i.category }}</p>
+
+{% endfor %}
+{% endblock content %}

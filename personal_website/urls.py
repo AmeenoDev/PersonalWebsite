@@ -16,10 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.conf import settings
+from django.conf.urls.static import static
 
 from mysite import views
 
 urlpatterns = [
+    path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
-    path('', include('mysite.urls')),  
-]
+    path('', include('mysite.urls')),
+    path('blogs/', include('blogs.urls')),  # Include the products app URLs if it exists
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#Static :conf urls static 
+#Settings : conf 

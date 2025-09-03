@@ -6,9 +6,13 @@ from . import views
 urlpatterns = [
     path('',views.home, name='home'), #three value
     path('about/', views.about, name='about'),
+    path('contact/', views.contact, name='contact'),
 ]
 def home(request):
-    return render(request, 'mysite/templates/home.html')
+    return render(request, 'home.html')
 
 def about(request):
-    return render(request, 'mysite/templates/about.html')
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')
